@@ -1,12 +1,10 @@
 package org.example;
 
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
 
         System.out.print("Enter the number of threads: ");
         int numThreads = scanner.nextInt();
@@ -23,6 +21,10 @@ public class Main {
             int threadEndRange = scanner.nextInt();
 
             threads[i] = new PrimeThread(threadStartRange, threadEndRange);
+        }
+
+
+        for (int i = 0; i < numThreads; i++) {
             threads[i].start();
         }
 
